@@ -1,0 +1,35 @@
+.Burger {
+  width: 100%;
+  margin: auto;
+  height: 35vh;
+  overflow: hidden;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.BasketImg {
+  position: relative;
+  top: -70px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  height: 160px;
+}
+
+.Teaser {
+  position: relative;
+  top: 0;
+  z-index: 10;
+  font-size: 1.6rem;
+  transition: all 0.2s ease-out;
+}
+
+.Teaser:hover {
+  transform: rotate(10deg);
+}
+
+@media (min-width: 768px) {
+  .Burger {
+    width: 40%;
+  }
+}

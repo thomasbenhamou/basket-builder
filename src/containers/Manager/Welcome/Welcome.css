@@ -1,0 +1,24 @@
+.cardWrapper {
+  margin-top: 80px;
+  box-sizing: border-box;
+  display: flex;
+  margin: auto;
+  width: 95vw;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid #eee;
+  box-shadow: 1px 1px 2px #ddd;
+  border-radius: 4px;
+  margin: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 1px solid rgba(200, 200, 200, 0.9);
+}

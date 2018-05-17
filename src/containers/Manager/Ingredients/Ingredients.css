@@ -1,0 +1,78 @@
+.buttonDiv {
+  display: flex;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  float: right;
+  background-color: transparent;
+  position: fixed;
+  background-color: rgba(10, 10, 10, 0.01);
+}
+
+.cardWrapper {
+  padding-top: 80px;
+  box-sizing: border-box;
+  display: flex;
+  width: 95vw;
+  margin: auto;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+.card {
+  flex: 0 1 100%;
+  padding: 10px;
+  border: 1px solid #eee;
+  box-shadow: 1px 1px 2px #ddd;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.card:hover {
+  border: 1px solid rgba(200, 200, 200, 0.9);
+}
+
+.ingName {
+  font-size: 1.3rem;
+  color: rgb(73,168,81);
+}
+
+.priceInput {
+  font-size: 1.8rem;
+  color: #888;
+  box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-family: inherit;
+  width: 80px;
+  cursor: pointer;
+  text-indent: 20%;
+  transition: all 0.2s ease-in;
+  background-color: transparent;
+  caret-color: rgb(73,168,81);
+}
+
+.priceInput:focus {
+  outline: none;
+  border-bottom: 2px dashed rgb(73,168,81);
+}
+
+.currency {
+  font-size: 1.8rem;
+  color: #888; 
+}
+
+@media (min-width: 500px) {
+    .card {
+    flex: 0 1 40%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .card {
+    flex: 0 1 30%;
+    }
+}

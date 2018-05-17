@@ -1,0 +1,18 @@
+.ingsList {
+  list-style: none;
+}
+
+.totalPrice {
+  color: rgb(73,168,81);
+  font-weight: bold;
+}
+
+.price {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+hr {
+  border-top: 2px dashed #ccc;
+  border-bottom: none;
+}

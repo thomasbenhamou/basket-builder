@@ -1,0 +1,33 @@
+.Auth {
+  margin: 20px auto;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
+.mainButton:hover {
+  background-color: #eee;
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+  .Auth {
+    width: 70%;
+  }
+}
+
+@media (min-width: 801px) {
+  .ContactData {
+    width: 500px;
+  }
+  .Auth {
+    width: 50%;
+  }
+}

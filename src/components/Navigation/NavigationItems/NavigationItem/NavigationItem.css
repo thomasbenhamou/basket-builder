@@ -1,0 +1,115 @@
+.NavigationItem {
+  margin: 10px 0;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+.NavigationItem a {
+  color: rgb(62,166,70);
+  margin: 0px 20px;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+  color: #4084C8;
+}
+
+.NavigationItem a span {
+  border-radius: 100%;
+  padding: 0px 2px;
+  font-size: 0.8rem;
+  color: rgb(73,168,81);
+  border: 1px solid rgb(73,168,81);
+  position: relative;
+  top: -10px;
+  right: 0;
+}
+.connectButton {
+    margin-top: 20px;
+    color: white;
+    padding: 0px 5px;
+    font-size: 1.1rem;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    background-color: rgb(148,189,61);
+    transition: all 0.2s ease-out;  
+}
+
+.connectButton:hover {
+    background-color: rgb(73,168,81);
+    border: 1px solid white;
+}
+
+.disconnectButton {
+    margin-top: 20px;
+    color: rgb(62,166,70);
+    padding: 0px 5px;
+    font-size: 1rem;
+    border: 1px solid rgb(62,166,70);
+    border-radius: 40px;
+}
+
+@media (min-width: 500px) {
+  .NavigationItem {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+  }
+
+  .NavigationItem a {
+    color: white;
+    height: 100%;
+    padding: 16px 10px;
+    border-bottom: 4px solid transparent;
+  }
+
+  .NavigationItem a:hover,
+  .NavigationItem a:active,
+  .NavigationItem a.active {
+    background-color: rgb(62,166,70);
+    border-bottom: 4px solid #4084C8;
+    color: white;
+  }
+
+  .NavigationItem a span {
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    border: 1px solid white;
+    background-color: forestgreen;
+    box-shadow: 1px 1px 1px #777;
+  }
+
+  .connectButton {
+    color: white;
+    margin-top: 0px;
+    padding: 0px 5px;
+    font-size: 1.1rem;
+    border: 1px solid transparent;
+    border-radius: 40px;
+    background-color: rgb(148,189,61);
+    transition: all 0.2s ease-out;  
+  }
+
+  .connectButton:hover {
+      background-color: rgb(73,168,81);
+      border: 1px solid white;
+  }
+
+  .disconnectButton {
+      margin-top: 0px;
+      color: white;
+      padding: 0px 5px;
+      font-size: 1rem;
+      border: 1px solid white;
+      border-radius: 40px;
+  }
+}

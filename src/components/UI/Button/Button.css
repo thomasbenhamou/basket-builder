@@ -1,0 +1,45 @@
+.Button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 5px 15px;
+    margin: 10px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.Success {
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    background-color: rgb(148,189,61);
+    transition: all 0.2s ease-out;  
+}
+
+.Success:hover {
+    transform: scale(1.03);
+}
+
+.Danger {
+    color: #944317;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.Danger:hover {
+    color: rgb(78,63,9);
+}
+
+.Button:disabled {
+    border: 1px solid rgb(148,189,61);
+    background-color: transparent;
+    color: rgb(148,189,61);
+    cursor: not-allowed;
+}
+
+.Button:disabled:hover {
+    transform: scale(1);
+}

@@ -1,0 +1,95 @@
+.BuildControls {
+  display: flex;
+  flex-flow: row;
+  overflow-x: scroll;
+  align-items: center;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 2px #ddd;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.BuildControls:hover .arrowLeft {
+    opacity: 1;
+}
+.BuildControls:hover .arrowRight {
+    opacity: 1;
+}
+
+.arrowLeft {
+    opacity: 0;
+    transition: all 0.2s ease-in;
+    font-family: sans-serif;
+    position: absolute;
+    left: 5px;
+    font-size: 1.8rem;
+    color: rgb(73,168,81);
+    text-shadow: 2px 2px 2px #ccc;
+}
+
+.arrowRight {
+    opacity: 0;
+    transition: all 0.2s ease-in;
+    font-family: sans-serif;
+    position: absolute;
+    right: 5px;
+    font-size: 1.8rem;
+    color: rgb(73,168,81);
+    text-shadow: 2px 2px 2px #ccc;
+}
+
+.OrderButton {
+    background-color: #6F3B11;
+    margin-top: 5px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+}
+
+.OrderButton:hover, .OrderButton:active {
+    background-color: rgb(73,168,81);
+    color: #fff;
+    transform: scale(0.97);
+}
+
+.OrderButton:disabled {
+    background-color: transparent;
+    cursor: default;
+    border: 1px solid transparent;
+    color: transparent;
+}
+
+.OrderButton:not(:disabled) {
+    animation: enable 0.3s linear;
+}
+
+.price {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 500px) {
+    .OrderButton {
+        border-radius: 4px;
+        transition: all 0.1s ease-out;
+    }
+
+}

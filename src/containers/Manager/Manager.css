@@ -1,0 +1,50 @@
+.mainWrapper {
+  text-align: center;
+  position: relative;
+}
+.fixedMenu {
+  border-bottom: 1px solid #eee;
+  background-color: rgba(248, 248, 248, 0.9);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 56px;
+  height: 58px;
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.pane {
+  cursor: pointer;
+  margin: 0px 5px;
+}
+
+.paneCurrent {
+  cursor: pointer;
+  margin: 0px 5px;
+  border-bottom: 1px solid rgb(73,168,81);
+}
+
+.pane span, .paneCurrent span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.leftPane:hover, .rightPane:hover {
+  border-bottom: 1px solid rgb(73,168,81);
+}
+
+.contentWrapper {
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .pane {
+  margin: 0px 20px;
+  }
+
+  .paneCurrent {
+    margin: 0px 20px;
+  }
+}

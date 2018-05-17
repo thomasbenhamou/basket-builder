@@ -1,0 +1,31 @@
+.CardContainer {
+  height: 90vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.DescContainer {
+  padding: 20px;
+  min-width: 300px;
+  height: auto;
+  background-color: rgb(147,190,49);
+  color: #eee;
+  font-size: 3rem;
+  text-align: center;
+  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 499px) {
+  .DescContainer {
+    clip-path: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .CardContainer {
+    height: 65vh;
+  }
+}
+
+

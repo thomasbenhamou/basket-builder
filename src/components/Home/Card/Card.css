@@ -1,0 +1,35 @@
+
+.Card {
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 1px 3px 3px #aaa;
+  margin: 20px;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+
+.Card:hover {
+  transform: scale(0.99);
+}
+
+.Card:hover .Title {
+  color: rgb(73,168,81);
+}
+
+@media (min-width: 768px) {
+  .Card {
+    width: 45vw;
+  }
+}
+
+.Title {
+  min-height: 10%;
+  width: 100%;
+  background-color: white;
+  color: rgb(148,189,61);
+  font-size: 2.3rem;
+  text-align: center;
+}

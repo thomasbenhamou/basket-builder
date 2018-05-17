@@ -1,0 +1,40 @@
+.BuildControl {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 50vw;
+    background-color: white;
+    margin: auto;
+    height: auto;
+    cursor: pointer;
+}
+
+.BuildControl:hover img {
+    border: 1px solid green;
+    transform: scale(1.05);
+}
+
+.BuildControl img {
+    height: 70px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-out;
+}
+
+.Label {
+    padding: 10px;
+    width: 80px;
+}
+
+
+@media (min-width: 1000px) {
+    .BuildControl {
+        min-width: 10vw;
+    }
+}
+
+@media (min-width: 500px) AND (max-width: 999px) {
+    .BuildControl {
+        min-width: 20vw;
+    }
+}

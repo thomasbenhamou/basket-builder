@@ -1,0 +1,9 @@
+.CheckoutSummary {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.CheckoutSummary h2 {
+  color: rgb(73,168,81);
+}
