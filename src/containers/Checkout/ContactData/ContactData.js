@@ -136,7 +136,7 @@ class ContactData extends Component {
       userId: this.props.userId
     }
 
-    this.props.onOrderBasket(order, this.props.token);
+    this.props.onPayment(order, this.props.token);
     
   }
 

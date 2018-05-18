@@ -29,7 +29,6 @@ class App extends Component {
     this.props.onTryAutoSignup();
   }
 
-  
   render() {
 
     let routes = (
