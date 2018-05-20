@@ -23,6 +23,18 @@
     transform: scale(1.03);
 }
 
+.SignUp {
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    background-color: rgb(73,168,81);
+    transition: all 0.2s ease-out; 
+}
+
+.SignUp:hover {
+    transform: scale(1.03);
+}
+
 .Danger {
     color: #944317;
     font-size: 1rem;

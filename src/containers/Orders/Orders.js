@@ -13,22 +13,39 @@ class Orders extends Component{
     this.props.onRemoveBadge();
   }
 
+
   render(){
+
+    const compare = (a,b) => {
+      if (a.date < b.date) {
+        return 1
+      }
+      if (a.date > b.date) {
+        return -1
+      }
+      return 0
+    }
+
     let orders = <Spinner />;
     if (!this.props.loading) {
+      const sortedOrders = this.props.orders.sort(compare);
       orders = 
-        this.props.orders.map(order => {
+        sortedOrders.map(order => {
           return <Order
             key={order.id}
             ingredients={order.ingredients}
             price={+order.price}
+            date={order.date}
           />
         })
       }
     return(
-      <div>
-        {orders}
-      </div>
+      <React.Fragment>
+        <h2 style={{marginLeft: '30px'}}>Voici la liste de vos précédentes commandes </h2>
+        <div>
+          {orders}
+        </div>
+      </React.Fragment>
     );
   }
 }

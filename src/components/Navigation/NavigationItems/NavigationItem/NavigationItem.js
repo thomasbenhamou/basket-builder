@@ -12,17 +12,14 @@ const navigationItem = (props) => {
     customClass = classes.disconnectButton;
   }
   return (
-  <li 
-    className={customClass}
-    >
+  <li className={customClass}>
     <NavLink 
       to={props.link}
-      exact
-      activeClassName={classes.active}
-      >{props.children}
-        {props.badged ? <span>1</span> : null}
+      exact={props.exact}
+      activeClassName={classes.active}>
+        {props.children}
+        {props.badged ? <span className={classes.badge}>1</span> : null}
     </NavLink>
-    
   </li>
   )
 };

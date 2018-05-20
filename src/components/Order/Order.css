@@ -1,8 +1,23 @@
 .Order {
-  width: 80%;
+  width: 100%;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   padding: 10px;
   margin: 10px auto;
   box-sizing: border-box;
+}
+
+.orderTotal {
+  color: rgb(77,167,85);
+  font-size: 1.2rem;
+}
+
+.grayText {
+  color: rgb(136,136,136);
+}
+
+@media (min-width: 500px) {
+  .Order {
+    width: 80%;
+  }
 }

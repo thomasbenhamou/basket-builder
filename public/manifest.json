@@ -1,6 +1,7 @@
 {
   "short_name": "Mon petit panier",
   "name": "Mon petit panier",
+  "author": "Thomas Benhamou",
   "icons": [
     {
       "src": "favicon.ico",

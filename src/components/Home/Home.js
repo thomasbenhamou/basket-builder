@@ -41,7 +41,8 @@ class Home extends Component {
     const thankYouMessage = (
       <div>
         <h3 style={{color: 'green'}}>Merci pour votre commande !</h3>
-        <p>Votre p'tit panier bio va être rempli et livré rapidement</p>
+        <p>Votre paiement a bien été réalisé.</p>
+        <p>Votre p'tit panier bio va être rempli et livré rapidement.</p>
         <Button 
           btnType="Success"
           clicked={this.props.resetOrderedState}>Ok</Button>

@@ -17,7 +17,6 @@ import managerReducer from './store/reducers/manager';
 
 import registerServiceWorker from './registerServiceWorker';
 
-import { StripeProvider } from 'react-stripe-elements';
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
@@ -42,9 +41,7 @@ sagaMiddleware.run(watchManager);
 const app = (
   <Provider store={store}>
     <BrowserRouter>
-      <StripeProvider apiKey="pk_test_PwoZhva8nT85oEFYpBFhzyzm">
         <App />
-      </StripeProvider>
     </BrowserRouter>
   </Provider>
 )

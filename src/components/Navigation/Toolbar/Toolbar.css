@@ -28,7 +28,7 @@
 }
 
 .Brand {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -38,5 +38,11 @@
   }
   .Brand {
     display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .Brand {
+    font-size: 2rem;
   }
 }

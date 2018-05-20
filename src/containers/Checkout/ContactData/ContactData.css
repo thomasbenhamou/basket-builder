@@ -1,6 +1,6 @@
 .ContactData {
   margin: 20px auto;
-  width: 80%;
+  width: 100%;
   text-align: center;
   box-shadow: 0 2px 3px #ccc;
   border: 1px solid #eee;
@@ -10,7 +10,13 @@
 .ContactData h4 {
   color: rgb(73,168,81);
 }
+
 @media (min-width: 500px) {
+  .ContactData {
+    width: 80%;
+  }
+}
+@media (min-width: 1000px) {
   .ContactData {
     width: 500px;
   }

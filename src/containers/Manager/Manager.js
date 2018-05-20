@@ -28,7 +28,7 @@ class Manager extends Component {
             className={this.props.location.pathname === '/manager' ? classes.paneCurrent : classes.pane}
             onClick={this.welcomePaneClickHandler}
           >
-            <span>&#8962;</span>
+            <span>&#8962; Menu</span>
           </div>
           <div
             className={this.props.location.pathname === '/manager/ingredients' ? classes.paneCurrent : classes.pane}

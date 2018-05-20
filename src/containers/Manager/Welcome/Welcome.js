@@ -8,7 +8,8 @@ const welcome = (props) => (
     <div className={classes.cardWrapper}>
       <div 
       className={classes.card}
-      onClick={props.priceClick}>Consulter et modifier les prix des produits</div>
+      onClick={props.priceClick}>Consulter et modifier les prix des produits
+      </div>
       <div 
         className={classes.card}
         onClick={props.monthBasketClick}>Consulter modifier la composition du panier du mois</div>

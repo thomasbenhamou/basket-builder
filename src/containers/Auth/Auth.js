@@ -43,7 +43,7 @@ class Auth extends Component {
         touched: false,
       }
     },
-    isSignup: true 
+    isSigningUp: true 
   }
 
   componentDidMount() {
@@ -51,6 +51,7 @@ class Auth extends Component {
       this.props.onSetAuthRedirectPath();
     }
   }
+  
 
   inputChangedHandler = (event, controlName) => {
     const updatedControls = {
@@ -75,7 +76,7 @@ class Auth extends Component {
   switchAuthModeHandler = () => {
     this.setState(prevState => {
       return {
-        isSignup: !prevState.isSignup
+        isSigningUp: !prevState.isSigningUp
       }
     })
   }
@@ -119,14 +120,16 @@ class Auth extends Component {
     return (
       <div className={classes.Auth}>
         {authRedirect}
+        <h3>{this.state.isSigningUp ? 'Créer votre compte' : 'Connection' }</h3>
         {errorMessage}
+        {this.state.isSigningUp ? <p> Pour créer votre compte, rentrez simplement votre email et un mot de passe : </p> : <p> Connectez vous avec votre email et mot de passe</p>}
         <form onSubmit={this.submitHandler}>
           {form}
-          <Button btnType="Success">{this.state.isSignup ? "Créer un compte" : "Se connecter"}</Button>
+          {this.state.isSigningUp ? <Button btnType="SignUp">Créer un compte</Button> : <Button btnType="Success">Se connecter</Button>}
         </form>
         <Button 
           clicked={this.switchAuthModeHandler}
-          btnType="Danger">{this.state.isSignup ? 'Déjà enregistré? Se connecter' : "ou Créer un compte"}</Button>
+          btnType="Danger">{this.state.isSigningUp ? 'Déjà enregistré? Se connecter' : "ou Créer un compte"}</Button>
       </div>
     )
   }

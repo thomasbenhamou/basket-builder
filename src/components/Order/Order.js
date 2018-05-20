@@ -12,19 +12,20 @@ const order = (props) => {
             textTransform: 'capitalize',
             display: 'inline-block',
             margin: '3px 8px',
-            border: '1px solid #ccc',
-            padding: '5px'
+            borderRight: '1px dashed #ccc',
+            padding: '10px'
           }}
-        >{props.ingredients[igKey].label} ({props.ingredients[igKey].quantity}kg)</span>)
+        >{props.ingredients[igKey].label} : {props.ingredients[igKey].quantity} kg</span>)
       }
       else return null;
     });
-
+  const orderDate = new Date(props.date);
   return (
   <div className={classes.Order}>
-    <p>Produits commandés :</p>
+      <p className={classes.grayText}>Date de la commande : {orderDate.toLocaleDateString()}</p>
+      <p className={classes.grayText}>Produits commandés :</p>
       {ingsOutput}
-    <p>Total panier : <strong>{props.price.toFixed(2)}€</strong></p>
+    <p className={classes.orderTotal}>Total panier : <strong>{props.price.toFixed(2)}€</strong></p>
   </div>)
 };
 

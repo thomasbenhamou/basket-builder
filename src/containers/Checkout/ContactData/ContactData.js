@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
+import StripeCheckout from 'react-stripe-checkout';
 import Button from '../../../components/UI/Button/Button';
 import classes from './ContactData.css';
 import axios from '../../../axios-orders';
@@ -116,15 +116,17 @@ class ContactData extends Component {
         value: 'fastest',
         validation: {
         },
+        touched: true,
         valid: true
       }
     },
     formIsValid: false
   }
 
-  orderHandler = (event) =>{
-    event.preventDefault();
-
+  orderHandler = () =>{
+    if (!this.state.formIsValid) {
+      return;
+    }
     const formData = {};
     for (let formElementIdentifier in this.state.orderForm) {
       formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
@@ -133,11 +135,10 @@ class ContactData extends Component {
       ingredients: this.props.ings,
       price: this.props.totalPrice.toFixed(2),
       orderData: formData,
-      userId: this.props.userId
+      userId: this.props.userId,
+      date: new Date()
     }
-
     this.props.onPayment(order, this.props.token);
-    
   }
 
   inputChangedHandler = (event, inputIdentifier) => {
@@ -158,11 +159,15 @@ class ContactData extends Component {
     for (let inputIdentifier in updatedOrderForm) {
       formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
     }
-
     this.setState({
       orderForm: updatedOrderForm,
       formIsValid: formIsValid
     })
+  }
+
+  onToken = (token) => {
+    // triggered when payment has been successfull
+    this.orderHandler();
   }
 
 
@@ -190,17 +195,34 @@ class ContactData extends Component {
             touched={formElement.config.touched}
             changed={(event) => this.inputChangedHandler(event, formElement.id)} />
         ))}
-      <Button
-        btnType="Success" disabled={!this.state.formIsValid}>Commander mon panier</Button>
     </form>);
 
     if (this.props.loading) {
       form = <Spinner />;
     }
+
+    const payButton = <Button btnType="Success" disabled>Paiement</Button>;
+
     return (
       <div className={classes.ContactData}>
         <h4>Informations sur la livraison</h4>
           {form}
+        {this.state.formIsValid ? 
+          <StripeCheckout
+            token={this.onToken}
+            stripeKey="pk_test_PwoZhva8nT85oEFYpBFhzyzm"
+            name="Le p'tit panier bio"
+            description="Votre panier"
+            panelLabel="Payez"
+            amount={this.props.totalPrice * 100}
+            currency="EUR"
+            locale="fr"
+            allowRememberMe={false}>
+            <Button btnType="Success">Paiement</Button>
+          </StripeCheckout>
+          : payButton
+        }
+        
       </div>
     );
   }
@@ -218,8 +240,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onOrderBasket: (orderData, token) => dispatch(actions.purchaseBasket(orderData, token))
+    onPayment: (orderData, userToken) => dispatch(actions.purchaseBasket(orderData, userToken))
   }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(ContactData, axios));
