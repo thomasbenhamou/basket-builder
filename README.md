@@ -11,3 +11,5 @@ A single page app built with React showing an interactive basket where the user 
 **Stack :**
 Firebase
 React
+![le panier bio](https://le-panier-bio.firebaseapp.com/static/media/basket-160442_640.75a33aa0.png
+)
